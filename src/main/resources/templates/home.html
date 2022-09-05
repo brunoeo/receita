@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{base :: head}"></head>
+<body>
+
+	<div th:replace="~{base :: logo}"></div>
+	<div class="container">
+		<div class="card mb-3" th:each="receita : ${receitas}">
+			<div  class="card-header alert-dark" th:text="${receita.nome}">Nome da receita</div>
+			</th:block>
+			
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="row">
+							<div class="col-md-7">Data da publicação: <span th:text="${#temporals.format(receira.dataPostagem, 'dd/MMM/yyyy')}">10/02/2022</span></div>
+						</div>
+					</div>
+					
+					<div class="col-12 col-sm-4">
+						<div>
+							<img class="img-thumbnail" th:src="${receita.urlImagem}" src=""/>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+	
+	
+</body>
+</html>
